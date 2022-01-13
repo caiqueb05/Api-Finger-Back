@@ -13,7 +13,10 @@ import {
 })
 export class Users extends Model {
   @PrimaryKey
-  @Column({ type: DataType.NUMBER, defaultValue: DataType.NUMBER })
+  @Column({
+    type: DataType.INTEGER,
+    autoIncrement: true,
+  })
   id: number;
 
   @Column({ allowNull: false, type: DataType.STRING })
@@ -25,3 +28,5 @@ export class Users extends Model {
   @Column({ allowNull: false })
   senha: string;
 }
+
+export default Users;
